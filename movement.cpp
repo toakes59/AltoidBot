@@ -1,3 +1,5 @@
+#include "AltoidBot.h"
+
 void walkForward()
 {
   frontLeft.write(70);
@@ -22,7 +24,7 @@ void stopRobot()
   stand();
 }
 
-void turnRight()
+static void turnStep()
 {
   frontLeft.write(70);
   rearLeft.write(70);
@@ -31,6 +33,20 @@ void turnRight()
   rearRight.write(70);
 
   delay(250);
+}
+
+void turnRight()
+{
+  turnStep();
+  stand();
+}
+
+void turnAround(int steps)
+{
+  for (int i = 0; i < steps; i++)
+  {
+    turnStep();
+  }
 
   stand();
 }

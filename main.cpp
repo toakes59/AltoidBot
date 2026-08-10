@@ -1,14 +1,11 @@
-#include <Servo.h>
+#include "AltoidBot.h"
 
 Servo frontLeft;
 Servo frontRight;
 Servo rearLeft;
 Servo rearRight;
 
-const int trigPin = 10;
-const int echoPin = 11;
-
-int distance;
+const int walkSteps = 6;
 
 void setup()
 {
@@ -17,27 +14,26 @@ void setup()
   rearLeft.attach(6);
   rearRight.attach(9);
 
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-
   stand();
+  delay(1000);
+
+  wave();
+  delay(500);
+
+  for (int i = 0; i < walkSteps; i++)
+  {
+    walkForward();
+  }
+  stand();
+  delay(500);
+
+  turnAround();
+  delay(500);
+
+  sit();
 }
 
 void loop()
 {
-  distance = getDistance();
-
-  if(distance < 15)
-  {
-    stopRobot();
-    delay(300);
-
-    turnRight();
-
-    delay(300);
-  }
-  else
-  {
-    walkForward();
-  }
+  // The startup routine runs once in setup(); nothing to do here.
 }
