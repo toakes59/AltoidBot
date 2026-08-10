@@ -2,21 +2,21 @@
 
 void walkForward()
 {
-  frontLeft.write(70);
-  rearRight.write(70);
+  frontLeft.write(clampAngle(70 + frontLeftTrim));
+  rearRight.write(clampAngle(70 + rearRightTrim));
 
-  frontRight.write(110);
-  rearLeft.write(110);
+  frontRight.write(clampAngle(110 + frontRightTrim));
+  rearLeft.write(clampAngle(110 + rearLeftTrim));
 
-  delay(150);
+  delay(350);
 
-  frontLeft.write(110);
-  rearRight.write(110);
+  frontLeft.write(clampAngle(110 + frontLeftTrim));
+  rearRight.write(clampAngle(110 + rearRightTrim));
 
-  frontRight.write(70);
-  rearLeft.write(70);
+  frontRight.write(clampAngle(70 + frontRightTrim));
+  rearLeft.write(clampAngle(70 + rearLeftTrim));
 
-  delay(150);
+  delay(350);
 }
 
 void stopRobot()
@@ -26,13 +26,13 @@ void stopRobot()
 
 static void turnStep()
 {
-  frontLeft.write(70);
-  rearLeft.write(70);
+  frontLeft.write(clampAngle(70 + frontLeftTrim));
+  rearLeft.write(clampAngle(70 + rearLeftTrim));
 
-  frontRight.write(70);
-  rearRight.write(70);
+  frontRight.write(clampAngle(70 + frontRightTrim));
+  rearRight.write(clampAngle(70 + rearRightTrim));
 
-  delay(250);
+  delay(400);
 }
 
 void turnRight()

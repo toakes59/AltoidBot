@@ -2,20 +2,18 @@
 
 void stand()
 {
-  frontLeft.write(90);
-  frontRight.write(90);
-  rearLeft.write(90);
-  rearRight.write(90);
+  frontLeft.write(clampAngle(90 + frontLeftTrim));
+  frontRight.write(clampAngle(90 + frontRightTrim));
+  rearLeft.write(clampAngle(90 + rearLeftTrim));
+  rearRight.write(clampAngle(90 + rearRightTrim));
 }
 
 void sit()
 {
   // Fold the legs further than a walking stride so the body lowers to the ground.
-  // Mirrors the diagonal-pair convention used in walkForward() — tune these on the
-  // real hardware, the exact angles depend on how the leg horns are mounted.
-  frontLeft.write(40);
-  rearRight.write(40);
+  frontLeft.write(clampAngle(180 + frontLeftTrim));
+  rearRight.write(clampAngle(180 + rearRightTrim));
 
-  frontRight.write(140);
-  rearLeft.write(140);
+  frontRight.write(clampAngle(0 + frontRightTrim));
+  rearLeft.write(clampAngle(0 + rearLeftTrim));
 }

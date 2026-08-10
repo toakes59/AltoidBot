@@ -11,8 +11,8 @@ void setup()
 {
   frontLeft.attach(3);
   frontRight.attach(5);
-  rearLeft.attach(6);
-  rearRight.attach(9);
+  rearRight.attach(6);
+  rearLeft.attach(9);
 
   stand();
   delay(1000);
