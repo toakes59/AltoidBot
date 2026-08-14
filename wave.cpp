@@ -4,9 +4,9 @@ void wave()
 {
   // Shift weight onto the other three legs to lean the body toward the front-right,
   // freeing that leg to lift and wave.
-  frontLeft.write(clampAngle(110 + frontLeftTrim));
-  rearLeft.write(clampAngle(110 + rearLeftTrim));
-  rearRight.write(clampAngle(70 + rearRightTrim));
+  frontLeft.write(clampAngle(40 + frontLeftTrim));
+  rearLeft.write(clampAngle(140 + rearLeftTrim));
+  rearRight.write(clampAngle(90 + rearRightTrim));
 
   delay(400);
 
@@ -15,7 +15,7 @@ void wave()
     frontRight.write(clampAngle(105 + frontRightTrim));
     delay(200);
 
-    frontRight.write(clampAngle(150 + frontRightTrim));
+    frontRight.write(clampAngle(180 + frontRightTrim));
     delay(200);
   }
 
