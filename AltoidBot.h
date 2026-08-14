@@ -25,8 +25,10 @@ inline int clampAngle(int angle)
 
 void stand();
 void sit();
+void layDown();
 
 void wave();
+void jump();
 
 void walkForward();
 void stopRobot();

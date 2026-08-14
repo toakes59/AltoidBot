@@ -18,7 +18,7 @@ void setup()
   delay(1000);
 
   wave();
-  delay(500);
+  delay(5000);
 
   for (int i = 0; i < walkSteps; i++)
   {
@@ -27,10 +27,21 @@ void setup()
   stand();
   delay(500);
 
-  turnAround();
-  delay(500);
+ // turnAround();
+ // delay(500);
 
   sit();
+  delay(5000);
+  stand();
+  delay(500);
+
+  jump();
+  delay(500);
+
+  stand();
+  delay(500);
+
+  layDown();
 }
 
 void loop()
